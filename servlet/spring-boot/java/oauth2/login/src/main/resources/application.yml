@@ -36,6 +36,23 @@ spring:
           okta:
             client-id: your-app-client-id
             client-secret: your-app-client-secret
+          cwsqa:
+            client-id: minestar_dev_ac_client
+            client-secret: 0vgBXYdLcRox4vYXlvxDI1lgM8skWvyGoksXsulVp6kBAZNOGiRk0el1T9I4FKtu
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:9080/login/oauth2/code/cwsqa
+            scope: openid,profile
+          catb2cstage:
+            client-id: 9797b771-e177-47c7-b2ac-367c4c6e8217
+            authorization-grant-type: authorization_code
+            scope: openid,9797b771-e177-47c7-b2ac-367c4c6e8217,offline_access
+            redirect-uri: http://localhost:9080/login/oauth2/code/catb2cstage
+          cwsb2cnonprod:
+            client-id: ecd2b72e-d007-4843-8681-3e2f2223550f
+            client-secret: GsN8Q~LBAWngMB-7SUkY-gnjwHKdFZYLDBwD_aAj
+            authorization-grant-type: authorization_code
+            scope: openid,ecd2b72e-d007-4843-8681-3e2f2223550f,offline_access
+            redirect-uri: http://localhost:9080/login/oauth2/code/cwsb2cnonprod
         provider:
           spring:
             authorization-uri: http://localhost:9000/oauth2/authorize
@@ -46,3 +63,14 @@ spring:
             token-uri: https://your-subdomain.oktapreview.com/oauth2/v1/token
             user-info-uri: https://your-subdomain.oktapreview.com/oauth2/v1/userinfo
             jwk-set-uri: https://your-subdomain.oktapreview.com/oauth2/v1/keys
+            authorization-uri: https://fedloginqa.cat.com/as/authorization.oauth2?pfidpadapterid=OAuthAdapterBasicIdentity
+            token-uri: https://fedloginqa.cat.com/as/token.oauth2
+            jwk-set-uri: https://fedloginqa.cat.com/pf/JWKS
+          catb2cstage:
+            authorization-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1a_p2_v1_signin_nonprod&groupsFilter=OMS
+            token-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1a_p2_v1_signin_nonprod
+            jwk-set-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/discovery/v2.0/keys?p=b2c_1a_p2_v1_signin_nonprod
+          cwsb2cnonprod:
+            authorization-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/b2c_1a_p2_v1_signin_nonprod/oauth2/v2.0/authorize?groupsFilter=OMS
+            token-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/b2c_1a_p2_v1_signin_nonprod/oauth2/v2.0/token
+            jwk-set-uri: https://cwslogin.b2clogin.com/cwslogin.onmicrosoft.com/b2c_1a_p2_v1_signin_nonprod/discovery/v2.0/keys
